@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURENDRA SHARMA | Civil Engineering Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --danger-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding-top: 70px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            top: 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill {
+            background: #e0e0e0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .skill:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .project-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tag {
+            background: #e0e0e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-links a {
+            font-size: 0.9rem;
+        }
+        
+        /* Education Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: #ddd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content p {
+            color: #666;
+        }
+        
+        /* Notes Section */
+        .notes-section {
+            background-color: #f8f9fa;
+        }
+        
+        .notes-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            padding: 0.8rem 1.8rem;
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .note-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .note-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .note-header h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .note-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .note-content {
+            padding: 1.5rem;
+        }
+        
+        .note-footer {
+            padding: 1rem 1.5rem;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .download-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #2980b9;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 7rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+                height: 400px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .contact-container,
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SURENDRA SHARMA</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                                        <li><a href="#education">Education</a></li>
+<li><a href="#notes">Notes</a></li>
+                <li><a href="#contact">Contact</a></li>
+                </ul>
+                        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1>Hi, I'm SURENDRA SHARMA</h1>
+                    <h2>Civil Engineer in the Making | Passionate Explorer of Innovation & Design</h2>
+            <p>Hey there! I'm Surendra Sharma, a 7th-semester Civil Engineering student at IOE, Pulchowk Campus. This space is where I share my journey, insights, and the exciting world of engineering—one discovery at a time.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn">View My Work                        </a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+                        </div>
+                        </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+                            <div class="section-title">
+                        <h2>About Me</h2>
+                    </div>
+<div class="about-content">
+            <div class="about-text">
+                <h3>Who am I?</h3>
+                <p>Civil engineer-in-training at IOE Pulchowk with a passion for turning blueprints into reality. Love exploring innovative construction tech, sustainable design, and hands-on problem solving. When I'm not calculating load capacities, you'll find me learning new skills or geeking out over smart infrastructure.</p>
+                <p>Let's build the future—literally.</p>
+                <p>Civil engineer | Future shaper | Curiosity-driven builder</p>
+                
+                <h3 style="margin-top: 2rem;">My Skills</h3>
+                <div class="skills-list">
+                    <span class="skill">C Programming</span>
+                    <span class="skill">AutoCAD</span>
+                    <span class="skill">ArcGIS</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Excel</span>
+                    <span class="skill">SWDTM</span>
+                    <span class="skill">Github</span>
+                </div>
+            </div>
+<div class="about-img">
+                <img src="assets\IMG_5613 (1).JPG" alt="Surendra Sharma">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-title">
+            <h2>My Projects</h2>
+</div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Structural Analysis Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Structural Analysis Project</h3>
+                        <p>Advanced structural analysis of a multi-story building using ETABS software, focusing on earthquake resistance and load distribution.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">ETABS</span>
+                            <span class="project-tag">Structural Engineering</span>
+                            <span class="project-tag">Seismic Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-outline">Report</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Urban Planning Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Urban Planning Project</h3>
+                        <p>Comprehensive urban development plan for Kathmandu Valley using ArcGIS, focusing on sustainable infrastructure and zoning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">ArcGIS</span>
+                        <span class="project-tag">Urban Planning</span>
+                            <span class="project-tag">Sustainability</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-outline">Report</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bridge Design Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Bridge Design Project</h3>
+                        <p>Innovative cable-stayed bridge design with AutoCAD, including material selection and cost analysis for Nepalese terrain.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AutoCAD</span>
+                            <span class="project-tag">Bridge Engineering</span>
+                            <span class="project-tag">Civil 3D</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">View Details</a>
+                            <a href="#" class="btn btn-outline">Design Files</a>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+                <div class="section-title">
+                    <h2>Education</h2>
+                </div>
+                <div class="timeline">
+            <!-- Education 1 -->
+                    <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Bachelor's in Civil Engineering</h3>
+                        <h4>IOE Pulchowk Campus | 2022 - 2026</h4>
+                        <p>A high-achieving student with a passion for structural engineering. Beyond academics, I actively participated in training programs, workshops, and engineering competitions while mastering industry tools like AutoCAD, ArcGIS, and ETABS. My hands-on projects and site visits strengthened my ability to bridge theory with real-world construction challenges.</p>
+                </div>
+                </div>
+            
+            <!-- Education 2 -->
+            <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>10+2 (Science) under National Examination Board (NEB)</h3>
+                        <h4>Birendra Secondary School | 2019 - 2021</h4>
+                        <p>Completed with focus on science and mathematics, laying the foundation for my engineering career. Achieved distinction in physics and mathematics, and participated in science fairs and math olympiads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" class="section notes-section">
+            <div class="section-title">
+            <h2>Engineering Notes</h2>
+            <p>Collection of my academic notes and study materials</p>
+        </div>
+        
+        <div class="notes-categories">
+                <button class="category-btn active" data-category="all">All Subjects</button>
+                <button class="category-btn" data-category="structural">Structural</button>
+            <button class="category-btn" data-category="geotech">Geotechnical</button>
+            <button class="category-btn" data-category="hydraulics">Hydraulics</button>
+            <button class="category-btn" data-category="materials">Materials</button>
+            <button class="category-btn" data-category="Management">Management</button>
+            <button class="category-btn" data-category="Plus-two">10+2</button>
+        </div>
+        
+        <div class="notes-grid">
+            <!-- Note 1 -->
+            <div class="note-card" data-category="structural">
+                <div class="note-header">
+                    <h3>Structural Analysis</h3>
+                    <div class="note-meta">
+                        <span>Semester 4</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Complete notes on beam analysis, trusses, and frame structures.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="notes/structural-analysis.html" class="download-btn">View Notes</a>
+                </div>
+                </div>
+
+                <!-- Note 2 -->
+                <div class="note-card" data-category="geotech">
+                    <div class="note-header">
+                    <h3>Soil Mechanics</h3>
+                    <div class="note-meta">
+                        <span>Semester 3</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                    <div class="note-content">
+                    <p>Fundamentals of soil classification and properties.</p>
+</div>
+                    <div class="note-footer">
+                    <a href="notes/soil-mechanics.html" class="download-btn">View Notes</a>
+                </div>
+                </div>
+
+                <!-- Note 3 -->
+                <div class="note-card" data-category="hydraulics">
+                    <div class="note-header">
+                    <h3>Fluid Mechanics</h3>
+                    <div class="note-meta">
+                        <span>Semester 2</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                    <div class="note-content">
+                    <p>Basic principles and equations of fluid flow.</p>
+</div>
+                    <div class="note-footer">
+                    <a href="notes/fluid-mechanics.html" class="download-btn">View Notes</a>
+                </div>
+                </div>
+
+                <!-- Note 4 -->
+            <div class="note-card" data-category="materials">
+                <div class="note-header">
+                    <h3>Construction Materials</h3>
+                    <div class="note-meta">
+                        <span>Semester 3</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Properties and testing methods of common construction materials.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="notes/construction-materials.html" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            
+            <!-- Note 5 -->
+                <div class="note-card" data-category="structural">
+                <div class="note-header">
+                    <h3>Concrete Technology</h3>
+                    <div class="note-meta">
+                        <span>Semester 5</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Mix design, properties, and testing of concrete.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="notes/concrete-technology.html" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            
+            <!-- Note 6 -->
+            <div class="note-card" data-category="structural">
+                <div class="note-header">
+                    <h3>Design of steel and Timber structures</h3>
+                    <div class="note-meta">
+                        <span>Semester 6</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Design and analysis of each components of steel and timber structures.</p>
+</div>
+                    <div class="note-footer">
+                    <a href="assets\Notes\steel1.pdf" class="download-btn">View Notes</a>
+                </div>
+            </div>
+             <!-- Note 7 -->
+             <div class="note-card" data-category="Management">
+                <div class="note-header">
+                    <h3>Engineering Economics</h3>
+                    <div class="note-meta">
+                        <span>Semester 6</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Basic knowledge of economics in engineering projects.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="assets\Notes\Engineering Economics.pdf" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            <!-- Note 8 -->
+            <div class="note-card" data-category="Plus-two">
+                <div class="note-header">
+                    <h3>Physics quick notes</h3>
+                    <div class="note-meta">
+                        <span>11 &12</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Quick recap of whole physics content of 11 and 12.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="assets\Notes\quickphysics.pdf" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            <!-- Note 9 -->
+            <div class="note-card" data-category="Plus-two">
+                <div class="note-header">
+                    <h3>Chemistry quick notes</h3>
+                    <div class="note-meta">
+                        <span>11 &12</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Quick recap of whole Chemistry content of 11 and 12.</p>
+</div>
+                    <div class="note-footer">
+                    <a href="assets\Notes\quickchemistry.pdf" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            <!-- Note 10 -->
+            <div class="note-card" data-category="Plus-two">
+                <div class="note-header">
+                    <h3>Mathematics quick notes</h3>
+                    <div class="note-meta">
+                        <span>11 &12</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Quick recap of whole Mathematics content of 11 and 12.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="assets\Notes\quickmathematics.pdf" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            <!-- Note 8 -->
+            <div class="note-card" data-category="Plus-two">
+                <div class="note-header">
+                    <h3>Physics quick notes</h3>
+                    <div class="note-meta">
+                        <span>11 &12</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Quick recap of whole physics content of 11 and 12.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="notes/fluid-mechanics.html" class="download-btn">View Notes</a>
+                </div>
+            </div>
+            <!-- Note 11 -->
+            <div class="note-card" data-category="Plus-two">
+                <div class="note-header">
+                    <h3>Physics quick notes</h3>
+                    <div class="note-meta">
+                        <span>11 &12</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Quick recap of whole physics content of 11 and 12.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="notes/fluid-mechanics.html" class="download-btn">View Notes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+            <div class="section-title">
+            <h2>Get In Touch</h2>
+</div>
+            <div class="contact-container">
+                <div class="contact-info">
+                <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sharmasurendra00001@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+977 9814911607</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/surendra0001-web"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/surendra-sharma-6a1a8823b"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_surendra_sharma_/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+<div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/surendra0001-web"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/surendra-sharma-6a1a8823b"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_surendra_sharma_/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100012803410439"><i class="fab fa-facebook"></i></a>
+        </div>
+<p>&copy; 2025 Surendra Sharma. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                });
+            });
+
+            // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Get form values
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            // For demonstration, we'll just show an alert
+            alert(`Thank you for your message, ${data.name}! I will get back to you soon at ${data.email}.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Notes filtering functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+                        const noteCards = document.querySelectorAll('.note-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter notes
+                const category = btn.dataset.category;
+                noteCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Handle direct links to notes sections
+        window.addEventListener('load', () => {
+            const hash = window.location.hash;
+            if (hash === '#notes-structural') {
+                document.querySelector('[data-category="structural"]').click();
+            } else if (hash === '#notes-geotech') {
+                document.querySelector('[data-category="geotech"]').click();
+            } else if (hash === '#notes-hydraulics') {
+                document.querySelector('[data-category="hydraulics"]').click();
+            } else if (hash === '#notes-materials') {
+                document.querySelector('[data-category="materials"]').click();
+            }
+        });
+    </script>
+</body>
+</html>

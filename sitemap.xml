@@ -32,20 +32,4 @@
     <loc>https://www.surendrasharma0001.com.np/contact</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- Project Subpages (If Applicable) -->
-  <url>
-    <loc>https://www.surendrasharma0001.com.np/projects/survey</loc>
-    <lastmod>2025-05-13</lastmod>
-  </url>
-
-  <!-- Notes Subpages -->
-  <url>
-    <loc>https://www.surendrasharma0001.com.np/notes/all</loc>
-    <lastmod>2025-05-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.surendrasharma0001.com.np/notes/structural</loc>
-    <lastmod>2025-05-14</lastmod>
-  </url>
 </urlset>

@@ -26,6 +26,14 @@
     
     <style>
         /* Additional styles for blog functionality */
+        .section-title h2 {
+        margin-top: 2.0rem;
+        font-size: 2.2rem;
+        margin-bottom: 2.0rem;
+        color: var(--dark-color);
+        position: relative;
+        display: inline-block;
+    }
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -433,111 +441,35 @@
 
     <!-- JavaScript -->
     <script>
-        // Blog Data - This would typically come from a database in a real application
-        <!-- const blogData = {
-            en: [
-                {
-                    id: 1,
-                    title: "The Future of Sustainable Construction",
-                    category: "Sustainability",
-                    date: "June 15, 2024",
-                    readTime: "8 min read",
-                    image: "assets/blogs/sustainable-construction.jpg",
-                    excerpt: "Exploring innovative materials and techniques that are revolutionizing sustainable building practices and reducing environmental impact...",
-                    content: `
-                        <p>The construction industry is undergoing a green revolution as sustainability becomes a top priority. With buildings accounting for nearly 40% of global carbon emissions, the need for eco-friendly construction methods has never been more urgent.</p>
-                        
-                        <h3>Innovative Materials</h3>
-                        <p>New materials like self-healing concrete, cross-laminated timber (CLT), and recycled plastic bricks are changing the game. CLT, for example, is not only renewable but also stores carbon, making it a carbon-negative material when sourced responsibly.</p>
-                        
-                        <h3>Energy Efficiency</h3>
-                        <p>Modern designs incorporate passive solar heating, advanced insulation, and smart glass that adjusts transparency based on temperature. These features can reduce energy consumption by up to 60% compared to traditional buildings.</p>
-                        
-                        <h3>Water Conservation</h3>
-                        <p>Green buildings now integrate rainwater harvesting systems, greywater recycling, and low-flow fixtures that can reduce water usage by 30-50%. Some innovative projects are even creating buildings that produce more water than they consume.</p>
-                        
-                        <p>The future of construction is undoubtedly green, with these innovations leading the way toward a more sustainable built environment.</p>
-                    `
-                },
-                {
-                    id: 2,
-                    title: "Earthquake Resistant Design Principles",
-                    category: "Structural",
-                    date: "April 10, 2024",
-                    readTime: "10 min read",
-                    image: "assets/blogs/seismic-design.jpg",
-                    excerpt: "Key concepts and techniques for designing structures that can withstand seismic forces, with case studies from Nepal's reconstruction efforts...",
-                    content: `
-                        <p>In earthquake-prone regions like Nepal, seismic design isn't just an option—it's a necessity. The 2015 Gorkha earthquake taught us valuable lessons about resilient construction.</p>
-                        
-                        <h3>Base Isolation</h3>
-                        <p>This technique involves separating the building from its foundation with flexible bearings or pads. During an earthquake, the building moves as a rigid unit while the ground moves beneath it, significantly reducing stress on the structure.</p>
-                        
-                        <h3>Energy Dissipation</h3>
-                        <p>Dampers and other energy-absorbing devices are installed throughout the building to absorb seismic energy. These act like shock absorbers in a car, reducing the forces that reach the main structure.</p>
-                        
-                        <h3>Reinforced Masonry</h3>
-                        <p>Traditional masonry is vulnerable to earthquakes, but reinforced masonry with steel bars and proper grouting can dramatically improve performance. This approach has been successfully used in Nepal's reconstruction projects.</p>
-                        
-                        <h3>Case Study: Nepal Reconstruction</h3>
-                        <p>Post-2015, Nepal implemented strict seismic codes. New buildings incorporate features like ring beams, vertical reinforcement, and proper foundation connections. Community training programs have ensured these techniques are applied even in rural areas.</p>
-                        
-                        <p>Earthquake-resistant design saves lives and reduces economic losses. As we've seen in Nepal, investing in resilience pays off when disaster strikes.</p>
-                    `
-                }
-            ],
-            np: [
-                {
-                    id: 1,
-                    title: "टिकाऊ निर्माणको भविष्य",
-                    category: "टिकाऊपन",
-                    date: "जुन १५, २०२४",
-                    readTime: "८ मिनेट पढ्ने",
-                    image: "assets/blogs/sustainable-construction.jpg",
-                    excerpt: "नवीन सामग्री र प्रविधिहरू अन्वेषण गर्दै जसले टिकाऊ निर्माण अभ्यासमा क्रान्ति ल्याइरहेको छ र वातावरणीय प्रभाव घटाउँदैछ...",
-                    content: `
-                        <p>निर्माण उद्योग हराइत क्रान्ति भइरहेको छ किनभने टिकाऊपन शीर्ष प्राथमिकता बन्दै गइरहेको छ। विश्वभरिको कार्बन उत्सर्जनको लगभग ४०% भवनहरूले गर्छन्, त्यसैले पर्यावरणमैत्री निर्माण विधिको आवश्यकता यति बेला कहिल्यै भन्दा बढी छ।</p>
-                        
-                        <h3>नवीन सामग्रीहरू</h3>
-                        <p>आत्म-मर्मत कंक्रीट, क्रस-ल्यामिनेटेड टिम्बर (सीएलटी), र रिसाइकल गरिएको प्लास्टिक ईंट जस्ता नयाँ सामग्रीहरूले खेल परिवर्तन गरिरहेका छन्। उदाहरणका लागि सीएलटी नवीकरणीय मात्र होइन तर कार्बन पनि संग्रह गर्छ, जसले गर्दा यो उत्तरदायी स्रोतबाट प्राप्त गर्दा कार्बन-नकारात्मक सामग्री बन्छ।</p>
-                        
-                        <h3>उर्जा दक्षता</h3>
-                        <p>आधुनिक डिजाइनहरूमा पैसिव सोलर हिटिंग, उन्नत इन्सुलेशन, र स्मार्ट ग्लास समावेश गरिएको छ जसले तापमानको आधारमा पारदर्शिता समायोजन गर्छ। यी विशेषताहरूले पारंपरिक भवनहरूको तुलनामा उर्जा खपत ६०% सम्म घटाउन सक्छ।</p>
-                        
-                        <h3>पानी संरक्षण</h3>
-                        <p>हरित भवनहरूमा अब वर्षाको पानी संग्रह प्रणाली, ग्रेवाटर रिसाइक्लिंग, र लो-फ्लो फिक्स्चरहरू समावेश गरिएको छ जसले पानीको प्रयोग ३०-५०% सम्म घटाउन सक्छ। केही नवीन परियोजनाहरूले त भवनहरू बनाइरहेका छन् जसले उनीहरूले खपत गर्ने भन्दा बढी पानी उत्पादन गर्छन्।</p>
-                        
-                        <p>निर्माणको भविष्य निस्सन्देह हरित छ, यी नवीनतम प्रविधिहरूले टिकाऊ निर्मित वातावरणतर्फ अग्रसर गरिरहेको छ।</p>
-                    `
-                },
-                {
-                    id: 2,
-                    title: "भूकम्प प्रतिरोधी डिजाइन सिद्धान्तहरू",
-                    category: "संरचनात्मक",
-                    date: "अप्रिल १०, २०२४",
-                    readTime: "१० मिनेट पढ्ने",
-                    image: "assets/blogs/seismic-design.jpg",
-                    excerpt: "संरचनाहरू डिजाइन गर्ने प्रमुख अवधारणा र प्रविधिहरू जसले भूकम्पीय शक्तिहरू सहन सक्छ, नेपालको पुनर्निर्माण प्रयासहरूबाट केस अध्ययनहरू सहित...",
-                    content: `
-                        <p>नेपाल जस्ता भूकम्पप्रवण क्षेत्रहरूमा, भूकम्प प्रतिरोधी डिजाइन केवल विकल्प होइन - यो आवश्यकता हो। २०१५ को गोरखा भूकम्पले हामीलाई लचिलो निर्माणको बारेमा मूल्यवान पाठहरू सिकायो।</p>
-                        
-                        <h3>आधार अलगाव</h3>
-                        <p>यस प्रविधिमा भवनलाई यसको आधारबाट लचिलो बेयरिंग वा प्याडहरूले अलग गरिन्छ। भूकम्प आउँदा, भवन कडा एकाइको रूपमा चल्छ जबकि जमीन यसको मुनि चल्छ, जसले संरचनामा पर्ने तनावलाई महत्त्वपूर्ण रूपमा घटाउँछ।</p>
-                        
-                        <h3>उर्जा अपव्यय</h3>
-                        <p>ड्याम्परहरू र अन्य उर्जा अवशोषित गर्ने उपकरणहरू भूकम्पीय उर्जा अवशोषित गर्न भवनभरि स्थापना गरिन्छन्। यी कारको शक अब्जर्बर जस्तै काम गर्छन्, मुख्य संरचनामा पुग्ने शक्तिहरू घटाउँछन्।</p>
-                        
-                        <h3>प्रबलित चुनढुंगा</h3>
-                        <p>पारंपरिक चुनढुंगा भूकम्पको लागि असुरक्षित छ, तर स्टील बारहरू र उचित ग्राउटिंग सहित प्रबलित चुनढुंगाले प्रदर्शनमा नाटकीय सुधार ल्याउन सक्छ। यो दृष्टिकोण नेपालको पुनर्निर्माण परियोजनाहरूमा सफलतापूर्वक प्रयोग गरिएको छ।</p>
-                        
-                        <h3>केस अध्ययन: नेपाल पुनर्निर्माण</h3>
-                        <p>२०१५ पछि, नेपालले कडा भूकम्प कोडहरू लागू गर्यो। नयाँ भवनहरूमा रिंग बीमहरू, ठाडो प्रबलन, र उचित आधार जडान जस्ता विशेषताहरू समावेश गरिएका छन्। सामुदायिक प्रशिक्षण कार्यक्रमहरूले यी प्रविधिहरू ग्रामीण क्षेत्रहरूमा पनि लागू गरिएको सुनिश्चित गरेको छ।</p>
-                        
-                        <p>भूकम्प प्रतिरोधी डिजाइनले ज्यान बचाउँछ र आर्थिक हानिहरू घटाउँछ। जस्तो कि हामीले नेपालमा देख्यौं, लचिलोपनमा लगानीले विपत्ति आउँदा फल दिन्छ।</p>
-                    `
-                }
-            ]
-        }; -->
+       // Blog Data - This would typically come from a database in a real application
+const blogData = {
+    en: [
+        {
+            id: 1,
+            title: "Seismic design of masonry structures",
+            category: "Structural",
+            date: "May 12, 2025",
+            readTime: "3 min read",
+            image: "assets/blogs/seismicmasonry.png",
+            excerpt: "Exploring innovative materials and techniques that are used for seismically active design of masonry structures...",
+            content: `<p>SOON.</p>`
+        }
+    ],
+    np: [
+        {
+            id: 1,
+            title: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइन",
+            category: "संरचनात्मक",
+            date: "मे १२, २०२५",
+            readTime: "३ मिनेट पढ्ने",
+            image: "assets/blogs/seismicmasonry.png",
+            excerpt: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइनका लागि प्रयोग गरिने नवीन सामग्री र प्रविधिहरू अन्वेषण गर्दै...",
+            content: `<p>चाँडै आउँदैछ।</p>`
+        }
+    ]
+};
+
+// Rest of your JavaScript code remains exactly the same...
 
         // DOM Elements
         const blogsContainer = document.getElementById('blogsContainer');

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Replace your current viewport tag with this -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>My Blogs | Surendra Sharma - Civil Engineer</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta name="description" content="Explore my civil engineering blogs covering sustainable construction, BIM technology, seismic design and more.">
@@ -338,11 +339,18 @@
             
            <!-- Change this in notes.html, blogs.html, projects.html, syllabus.html -->
 <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="index.html#about">About</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="index.html#education">Education</a></li>
-    <li><a href="notes.html">Notes</a></li>
+    <li class="dropdown">
+        <a href="#" onclick="event.preventDefault();">Notes <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="notes.html">Handwritten Notes</a>
+            <a href="past-questions.html">Past Questions</a>
+            <a href="lab-reports.html">Lab Reports</a>
+        </div>
+    </li>
     <li><a href="blogs.html">Blogs</a></li>
     <li><a href="syllabus.html">Syllabus</a></li>
     <li><a href="index.html#contact">Contact</a></li>
@@ -407,7 +415,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="index.html#about">About</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="notes.html">Notes</a></li>
                         <li><a href="blogs.html">Blogs</a></li>
@@ -420,7 +428,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-envelope"></i> surendrasharma0001web@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +977 9814911607</li>
+                        <li><i class="fas fa-phone"></i> +977 9765224527</li>
                     </ul>
                 </div>
             </div>
@@ -442,7 +450,8 @@
     <!-- JavaScript -->
     <script>
        // Blog Data - This would typically come from a database in a real application
-const blogData = {
+
+     const blogData = {
     en: [
         {
             id: 1,
@@ -452,7 +461,38 @@ const blogData = {
             readTime: "3 min read",
             image: "assets/blogs/seismicmasonry.png",
             excerpt: "Exploring innovative materials and techniques that are used for seismically active design of masonry structures...",
-            content: `<p>SOON.</p>`
+            content: `
+                <h2>Masonry Buildings and Seismic Performance</h2>
+                <p>Masonry buildings are brittle structures, so they are more susceptible to seismic damage.</p>
+
+                <p>For better seismic performance, all walls must be joined properly and need to be anchored to the roof and foundation for overall structural integrity. This allows the building to act like a box, which is known as <strong>box action</strong>.</p>
+
+                <h3>For Box Action:</h3>
+                <ul>
+                    <li>Connections between walls should be good.</li>
+                    <li>Sizes of openings (doors and windows) must be kept as small as possible.</li>
+                    <li>The length/thickness and height/thickness ratios must be within limits as per building codes.</li>
+                </ul>
+
+                <h3>Horizontal Bands</h3>
+                <p>Horizontal bands hold the masonry building as a single unit by tying all the walls together. Examples include: Gable band, Roof band, Lintel band, and Plinth band.</p>
+
+                <h3>Openings</h3>
+                <p>Openings near corners disrupt the transfer of forces between walls. Large openings may weaken the wall's ability to carry its own inertia forces. Therefore, openings must be small and away from corners.</p>
+
+                <h3>Vertical Reinforcement</h3>
+                <p>Vertical reinforcement helps prevent walls from sliding and collapsing in their weak direction.</p>
+
+                <h3>Through Stones</h3>
+                <p>Provision of through stones is necessary in stone masonry construction for stability and integrity.</p>
+
+                <h3>Building Plan</h3>
+                <p>Asymmetric plans are preferred for better seismic performance.</p>
+                <p>Buildings with L, T, E, or Y-shaped plans must be separated into simpler rectangular components.</p>
+
+                <h3>Ductile Design</h3>
+                <p>The structure should be designed to ensure ductile failure rather than brittle failure, enhancing safety during earthquakes.</p>
+            `
         }
     ],
     np: [
@@ -464,7 +504,38 @@ const blogData = {
             readTime: "३ मिनेट पढ्ने",
             image: "assets/blogs/seismicmasonry.png",
             excerpt: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइनका लागि प्रयोग गरिने नवीन सामग्री र प्रविधिहरू अन्वेषण गर्दै...",
-            content: `<p>चाँडै आउँदैछ।</p>`
+            content: `
+                <h2>इँटा-पत्थरका भवन र भूकम्पीय प्रदर्शन</h2>
+                <p>इँटा र ढुङ्गाबाट बनेका भवनहरू नाजुक संरचना भएकाले भूकम्पीय क्षतिको जोखिम बढी हुन्छ।</p>
+
+                <p>भूकम्पीय प्रदर्शन सुधार गर्न सबै पर्खालहरू ठीकसँग जोडिएको र छाना तथा फाउन्डेसनसँग मजबुत एंकर गरिएको हुनुपर्छ जसले सम्पूर्ण संरचनालाई बाकस जस्तो काम गर्न मद्दत गर्छ, जसलाई <strong>बक्स एक्शन (box action)</strong> भनिन्छ।</p>
+
+                <h3>बक्स एक्शनका लागि:</h3>
+                <ul>
+                    <li>पर्खालहरूबीचको जडान राम्रो हुनुपर्छ।</li>
+                    <li>ढोका र झ्यालजस्ता खुल्ला ठाउँहरू सकेसम्म साना राख्नुपर्छ।</li>
+                    <li>लम्बाइ/मोटाइ र उचाइ/मोटाइ अनुपात कोड अनुसार सीमाभित्र हुनुपर्छ।</li>
+                </ul>
+
+                <h3>तेर्सो ब्यान्डहरू</h3>
+                <p>तेर्सो ब्यान्डहरूले सबै पर्खालहरूलाई बाँधेर भवनलाई एक एकाइको रूपमा समेट्छन्। उदाहरणका लागि: गेबल ब्यान्ड, छाना ब्यान्ड, लिन्टेल ब्यान्ड, र प्लिन्थ ब्यान्ड।</p>
+
+                <h3>खुल्ला ठाउँहरू</h3>
+                <p>पर्खालको कुनामा नजिक खुल्ला ठाउँ हुनुले बल हस्तान्तरणमा बाधा पुर्याउँछ र धेरै ठूला खुल्ला ठाउँले पर्खाल कमजोर हुन्छ। त्यसैले खुल्ला ठाउँहरू साना र कुनाबाट टाढा राख्नुपर्छ।</p>
+
+                <h3>ठाडो सुदृढीकरण</h3>
+                <p>ठाडो सुदृढीकरणले पर्खाललाई चिप्लिन र कमजोर दिशामा ढल्नबाट रोक्छ।</p>
+
+                <h3>थ्रु स्टोनको व्यवस्था</h3>
+                <p>ढुङ्गा संरचनामा थ्रु स्टोनको व्यवस्था अनिवार्य छ जसले स्थिरता र मजबुती दिन्छ।</p>
+
+                <h3>भवनको योजना</h3>
+                <p>असममित योजना भएका भवनहरू भूकम्प प्रतिरोधी हुने भएकाले प्राथमिकता दिइन्छ।</p>
+                <p>L, T, E, Y आकारका भवनलाई आयताकार भागहरूमा विभाजन गर्नुपर्छ।</p>
+
+                <h3>लचकदार डिजाइन</h3>
+                <p>संरचनालाई लचकदार (ductile) विफलता सुनिश्चित गर्न डिजाइन गर्नुपर्छ जसले भूकम्पको समयमा सुरक्षित हुन्छ।</p>
+            `
         }
     ]
 };

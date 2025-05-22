@@ -334,15 +334,22 @@
             </button>
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="index.html#education">Education</a></li>
-                <li><a href="notes.html">Notes</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="syllabus.html" class="active">Syllabus</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li class="dropdown">
+        <a href="#" onclick="event.preventDefault();">Notes <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="notes.html">Handwritten Notes</a>
+            <a href="past-questions.html">Past Questions</a>
+            <a href="lab-reports.html">Lab Reports</a>
+        </div>
+    </li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="syllabus.html">Syllabus</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+</ul>
         </div>
     </nav>
 
@@ -351,7 +358,7 @@
         <div class="container">
             <div class="syllabus-header">
                 <h1>Civil Engineering Syllabus</h1>
-                <p>Complete course structure and resources for IOE Pulchowk Campus</p>
+                <p>Complete course structure and resources for IOE and other competitive and entrance exams.</p>
             </div>
             
             <!-- Tabs -->
@@ -360,7 +367,7 @@
                     <i class="fas fa-graduation-cap"></i> Bachelor's Degree
                 </button>
                 <button class="tab-btn" data-tab="entrance">
-                    <i class="fas fa-tasks"></i> Entrance Exams
+                    <i class="fas fa-tasks"></i> Entrance and Competitive exams
                 </button>
             </div>
             
@@ -429,6 +436,24 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Semester 2 Content -->
+                <div class="semester-content" data-semester="2">
+                    <div class="syllabus-item">
+                        <h3><i class="fas fa-book syllabus-icon"></i> Second Semester Complete Syllabus(New)</h3>
+                        <div class="syllabus-actions">
+                            <button class="btn btn-primary view-details-btn" data-semester="2">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="assets\syllabus\sem2new.pdf" class="btn btn-outline" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="syllabus-pdf-view" id="semester-2-view">
+                            <!-- PDF will be loaded here when View Details is clicked -->
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Add similar blocks for semesters 3-8 -->
                 <!-- Semester 3 Content -->
@@ -448,6 +473,24 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Semester 3 Content -->
+                <div class="semester-content" data-semester="3">
+                    <div class="syllabus-item">
+                        <h3><i class="fas fa-book syllabus-icon"></i> Third Semester Complete Syllabus(New)</h3>
+                        <div class="syllabus-actions">
+                            <button class="btn btn-primary view-details-btn" data-semester="3">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="assets\syllabus\sem3new.pdf" class="btn btn-outline" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="syllabus-pdf-view" id="semester-3-view">
+                            <!-- PDF will be loaded here when View Details is clicked -->
+                        </div>
+                    </div>
+                </div>
                 <!-- Semester 4 Content -->
                 <div class="semester-content" data-semester="4">
                     <div class="syllabus-item">
@@ -457,6 +500,24 @@
                                 <i class="fas fa-eye"></i> View Details
                             </button>
                             <a href="assets\syllabus\sem4old.pdf" class="btn btn-outline" download>
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                        <div class="syllabus-pdf-view" id="semester-4-view">
+                            <!-- PDF will be loaded here when View Details is clicked -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semester 4 Content -->
+                <div class="semester-content" data-semester="4">
+                    <div class="syllabus-item">
+                        <h3><i class="fas fa-book syllabus-icon"></i> Fourth Semester Complete Syllabus(New)</h3>
+                        <div class="syllabus-actions">
+                            <button class="btn btn-primary view-details-btn" data-semester="4">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <a href="assets\syllabus\sem4new.pdf" class="btn btn-outline" download>
                                 <i class="fas fa-download"></i> Download
                             </a>
                         </div>
@@ -653,7 +714,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="index.html#about">About</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="notes.html">Notes</a></li>
                         <li><a href="blogs.html">Blogs</a></li>
@@ -666,7 +727,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-envelope"></i> surendrasharma0001web@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +977 9814911607</li>
+                        <li><i class="fas fa-phone"></i> +977  9765224527</li>
                     </ul>
                 </div>
             </div>

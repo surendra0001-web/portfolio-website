@@ -39,11 +39,18 @@
             
             <!-- Change this in notes.html, blogs.html, projects.html, syllabus.html -->
 <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="index.html#about">About</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="index.html#education">Education</a></li>
-    <li><a href="notes.html">Notes</a></li>
+    <li class="dropdown">
+        <a href="#" onclick="event.preventDefault();">Notes <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="notes.html">Handwritten Notes</a>
+            <a href="past-questions.html">Past Questions</a>
+            <a href="lab-reports.html">Lab Reports</a>
+        </div>
+    </li>
     <li><a href="blogs.html">Blogs</a></li>
     <li><a href="syllabus.html">Syllabus</a></li>
     <li><a href="index.html#contact">Contact</a></li>
@@ -235,7 +242,7 @@ Prepared a detailed technical report with maps, drawings, and engineering docume
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-envelope"></i> surendrasharma0001web@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +977 9814911607</li>
+                        <li><i class="fas fa-phone"></i> +977  9765224527</li>
                     </ul>
                 </div>
             </div>

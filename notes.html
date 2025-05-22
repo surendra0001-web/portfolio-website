@@ -39,11 +39,18 @@
             
             <!-- Change this in notes.html, blogs.html, projects.html, syllabus.html -->
 <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="index.html#about">About</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="index.html#education">Education</a></li>
-    <li><a href="notes.html">Notes</a></li>
+    <li class="dropdown">
+        <a href="#" onclick="event.preventDefault();">Notes <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="notes.html">Handwritten Notes</a>
+            <a href="past-questions.html">Past Questions</a>
+            <a href="lab-reports.html">Lab Reports</a>
+        </div>
+    </li>
     <li><a href="blogs.html">Blogs</a></li>
     <li><a href="syllabus.html">Syllabus</a></li>
     <li><a href="index.html#contact">Contact</a></li>
@@ -386,6 +393,28 @@
         </div>
 
         <div class="notes-grid">
+
+             <!-- Note 1 -->
+            <div class="note-card" data-category="structural">
+                <div class="note-header">
+                    <span class="note-category-tag">Structural</span>
+                    <h3>Theory of Structure - I</h3>
+                    <div class="note-meta">
+                        <span>Semester 1</span>
+                        <span>PDF</span>
+                    </div>
+                </div>
+                <div class="note-content">
+                    <p>Complete notes on Theory of Structure-I.</p>
+                </div>
+                <div class="note-footer">
+                    <a href="assets\Notes\Structure-I.pdf" class="view-btn">
+                        <i class="far fa-eye"></i>
+                        View Notes
+                    </a>
+                </div>
+            </div>
+
             <!-- Note 1 -->
             <div class="note-card" data-category="common">
                 <div class="note-header">
@@ -648,7 +677,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
                         <li><i class="fas fa-envelope"></i> surendrasharma0001web@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +977 9814911607</li>
+                        <li><i class="fas fa-phone"></i> +977  9765224527</li>
                     </ul>
                 </div>
             </div>

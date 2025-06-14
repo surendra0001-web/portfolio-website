@@ -827,6 +827,20 @@
         background-color: rgba(67, 97, 238, 0.05);
         border-radius: var(--border-radius);
     }
+    /* For mobile */
+@media (max-width: 768px) {
+    .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a.active {
+        background-color: #f0f0f0; /* Visual feedback for active item */
+    }
+}
     
     .dropdown.active .dropdown-content {
         display: block;
@@ -1428,7 +1442,7 @@
                 }
             });
         });
-        
+
         // Mobile dropdown toggle functionality
         const dropdowns = document.querySelectorAll('.dropdown > a');
         
@@ -1455,9 +1469,6 @@
                         
                         // Toggle current dropdown
                         parentDropdown.classList.toggle('active');
-                        
-                        // If clicking the main dropdown link, don't proceed further
-                        if(!isActive) return;
                     }
                 });
             });
@@ -1466,26 +1477,24 @@
             document.querySelectorAll('.dropdown-content a').forEach(item => {
                 item.addEventListener('click', function(e) {
                     if(window.innerWidth <= 768) {
-                        if(!this.classList.contains('active')) {
+                        const dropdown = this.closest('.dropdown');
+                        const isActive = this.classList.contains('active');
+                        
+                        if(!isActive) {
                             // First click - just activate the link
                             e.preventDefault();
                             e.stopPropagation();
                             
                             // Deactivate all other links in this dropdown
-                            this.closest('.dropdown-content').querySelectorAll('a').forEach(link => {
+                            dropdown.querySelectorAll('.dropdown-content a').forEach(link => {
                                 link.classList.remove('active');
                             });
                             
                             // Activate this link
                             this.classList.add('active');
-                        } else {
-                            // Second click - proceed with navigation
-                            // Close the dropdown
-                            this.closest('.dropdown').classList.remove('active');
-                            // Remove active class
-                            this.classList.remove('active');
-                            // Allow default link behavior
                         }
+                        // Second click will naturally follow through with navigation
+                        // as we don't preventDefault when link is active
                     }
                 });
             });

@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Replace your current viewport tag with this -->
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>My Blogs | Surendra Sharma - Civil Engineer</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta name="description" content="Explore my civil engineering blogs covering sustainable construction, BIM technology, seismic design and more.">
@@ -28,13 +27,14 @@
     <style>
         /* Additional styles for blog functionality */
         .section-title h2 {
-        margin-top: 2.0rem;
-        font-size: 2.2rem;
-        margin-bottom: 2.0rem;
-        color: var(--dark-color);
-        position: relative;
-        display: inline-block;
-    }
+            margin-top: 2.0rem;
+            font-size: 2.2rem;
+            margin-bottom: 2.0rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+        
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -305,9 +305,16 @@
         }
         
         /* Responsive Styles */
+        @media (max-width: 992px) {
+            .blogs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
         @media (max-width: 768px) {
             .blogs-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .modal-header {
@@ -320,6 +327,28 @@
             
             .modal-body {
                 padding: 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .modal-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .language-switcher {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -341,7 +370,7 @@
             
            <!-- Change this in notes.html, blogs.html, projects.html, syllabus.html -->
 <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="index.html#about">About</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="index.html#education">Education</a></li>
@@ -353,7 +382,7 @@
             <a href="lab-reports.html">Lab Reports</a>
         </div>
     </li>
-    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="blogs.html" class="active">Blogs</a></li>
     <li><a href="syllabus.html">Syllabus</a></li>
     <li><a href="index.html#contact">Contact</a></li>
 </ul>
@@ -407,7 +436,7 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="logo">
-                        <img src="assets\LOGO (1).jpg" alt="Surendra Sharma Logo" loading="lazy">
+                        <img src="assets/LOGO (1).jpg" alt="Surendra Sharma Logo" loading="lazy">
                         <span>SURENDRA</span>
                     </div>
                     <p>Innovative civil engineer dedicated to creating sustainable infrastructure solutions through cutting-edge design and technology.</p>
@@ -451,98 +480,343 @@
 
     <!-- JavaScript -->
     <script>
-       // Blog Data - This would typically come from a database in a real application
+        // Blog Data
+        const blogData = {
+            en: [
+                {
+                    id: 1,
+                    title: "Seismic design of masonry structures",
+                    category: "Structural",
+                    date: "May 12, 2025",
+                    readTime: "3 min read",
+                    image: "assets/blogs/seismicmasonry.png",
+                    excerpt: "Exploring innovative materials and techniques that are used for seismically active design of masonry structures...",
+                    content: `
+                        <h2>Masonry Buildings and Seismic Performance</h2>
+                        <p>Masonry buildings are brittle structures, so they are more susceptible to seismic damage.</p>
 
-     const blogData = {
-    en: [
-        {
-            id: 1,
-            title: "Seismic design of masonry structures",
-            category: "Structural",
-            date: "May 12, 2025",
-            readTime: "3 min read",
-            image: "assets/blogs/seismicmasonry.png",
-            excerpt: "Exploring innovative materials and techniques that are used for seismically active design of masonry structures...",
-            content: `
-                <h2>Masonry Buildings and Seismic Performance</h2>
-                <p>Masonry buildings are brittle structures, so they are more susceptible to seismic damage.</p>
+                        <p>For better seismic performance, all walls must be joined properly and need to be anchored to the roof and foundation for overall structural integrity. This allows the building to act like a box, which is known as <strong>box action</strong>.</p>
 
-                <p>For better seismic performance, all walls must be joined properly and need to be anchored to the roof and foundation for overall structural integrity. This allows the building to act like a box, which is known as <strong>box action</strong>.</p>
+                        <h3>For Box Action:</h3>
+                        <ul>
+                            <li>Connections between walls should be good.</li>
+                            <li>Sizes of openings (doors and windows) must be kept as small as possible.</li>
+                            <li>The length/thickness and height/thickness ratios must be within limits as per building codes.</li>
+                        </ul>
 
-                <h3>For Box Action:</h3>
-                <ul>
-                    <li>Connections between walls should be good.</li>
-                    <li>Sizes of openings (doors and windows) must be kept as small as possible.</li>
-                    <li>The length/thickness and height/thickness ratios must be within limits as per building codes.</li>
-                </ul>
+                        <h3>Horizontal Bands</h3>
+                        <p>Horizontal bands hold the masonry building as a single unit by tying all the walls together. Examples include: Gable band, Roof band, Lintel band, and Plinth band.</p>
 
-                <h3>Horizontal Bands</h3>
-                <p>Horizontal bands hold the masonry building as a single unit by tying all the walls together. Examples include: Gable band, Roof band, Lintel band, and Plinth band.</p>
+                        <h3>Openings</h3>
+                        <p>Openings near corners disrupt the transfer of forces between walls. Large openings may weaken the wall's ability to carry its own inertia forces. Therefore, openings must be small and away from corners.</p>
 
-                <h3>Openings</h3>
-                <p>Openings near corners disrupt the transfer of forces between walls. Large openings may weaken the wall's ability to carry its own inertia forces. Therefore, openings must be small and away from corners.</p>
+                        <h3>Vertical Reinforcement</h3>
+                        <p>Vertical reinforcement helps prevent walls from sliding and collapsing in their weak direction.</p>
 
-                <h3>Vertical Reinforcement</h3>
-                <p>Vertical reinforcement helps prevent walls from sliding and collapsing in their weak direction.</p>
+                        <h3>Through Stones</h3>
+                        <p>Provision of through stones is necessary in stone masonry construction for stability and integrity.</p>
 
-                <h3>Through Stones</h3>
-                <p>Provision of through stones is necessary in stone masonry construction for stability and integrity.</p>
+                        <h3>Building Plan</h3>
+                        <p>Symmetric plans are preferred for better seismic performance.</p>
+                        <p>Buildings with L, T, E, or Y-shaped plans must be separated into simpler rectangular components.</p>
 
-                <h3>Building Plan</h3>
-                <p>Asymmetric plans are preferred for better seismic performance.</p>
-                <p>Buildings with L, T, E, or Y-shaped plans must be separated into simpler rectangular components.</p>
+                        <h3>Ductile Design</h3>
+                        <p>The structure should be designed to ensure ductile failure rather than brittle failure, enhancing safety during earthquakes.</p>
+                    `,
+                    fullPage: "blog-seismic-design.html"
+                },
+                {
+                    id: 2,
+                    title: "Creep in Concrete: Time-Dependent Deformation",
+                    category: "Structural",
+                    date: "June 14, 2025",
+                    readTime: "4 min read",
+                    image: "assets/blogs/creep_concrete.png",
+                    excerpt: "Understanding the time-dependent inelastic strain in concrete under sustained loads and its effects on structural behavior...",
+                    content: `
+                        <h2>Creep in Concrete</h2>
+                        <p>Creep refers to the time-dependent inelastic strain that occurs in concrete under sustained stress. When combined with shrinkage, these phenomena are typically considered additive for simplicity.</p>
 
-                <h3>Ductile Design</h3>
-                <p>The structure should be designed to ensure ductile failure rather than brittle failure, enhancing safety during earthquakes.</p>
-            `
-        }
-    ],
-    np: [
-        {
-            id: 1,
-            title: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइन",
-            category: "संरचनात्मक",
-            date: "मे १२, २०२५",
-            readTime: "३ मिनेट पढ्ने",
-            image: "assets/blogs/seismicmasonry.png",
-            excerpt: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइनका लागि प्रयोग गरिने नवीन सामग्री र प्रविधिहरू अन्वेषण गर्दै...",
-            content: `
-                <h2>इँटा-पत्थरका भवन र भूकम्पीय प्रदर्शन</h2>
-                <p>इँटा र ढुङ्गाबाट बनेका भवनहरू नाजुक संरचना भएकाले भूकम्पीय क्षतिको जोखिम बढी हुन्छ।</p>
+                        <h3>Key Characteristics of Creep</h3>
+                        <ul>
+                            <li><strong>Instantaneous Recovery:</strong> When load is removed, the strain decreases immediately by an amount equal to the elastic strain at that age.</li>
+                            <li><strong>Creep Recovery:</strong> Following instantaneous recovery, there's a gradual decrease in strain - this partial recovery is always smaller than the original creep deformation.</li>
+                            <li><strong>Relaxation:</strong> Under constant strain, creep causes progressive stress reduction over time.</li>
+                            <li><strong>Irreversibility:</strong> Creep isn't fully reversible, leaving residual deformation that can be viewed as irreversible creep.</li>
+                        </ul>
 
-                <p>भूकम्पीय प्रदर्शन सुधार गर्न सबै पर्खालहरू ठीकसँग जोडिएको र छाना तथा फाउन्डेसनसँग मजबुत एंकर गरिएको हुनुपर्छ जसले सम्पूर्ण संरचनालाई बाकस जस्तो काम गर्न मद्दत गर्छ, जसलाई <strong>बक्स एक्शन (box action)</strong> भनिन्छ।</p>
+                        <h3>Time Dependency</h3>
+                        <p>The creep rate decreases with time, with terminal values typically reached after five years. About 75% of creep occurs within the first 12 months.</p>
 
-                <h3>बक्स एक्शनका लागि:</h3>
-                <ul>
-                    <li>पर्खालहरूबीचको जडान राम्रो हुनुपर्छ।</li>
-                    <li>ढोका र झ्यालजस्ता खुल्ला ठाउँहरू सकेसम्म साना राख्नुपर्छ।</li>
-                    <li>लम्बाइ/मोटाइ र उचाइ/मोटाइ अनुपात कोड अनुसार सीमाभित्र हुनुपर्छ।</li>
-                </ul>
+                        <h3>Practical Effects of Creep</h3>
+                        <ol>
+                            <li>Increases deflection in reinforced concrete beams over time</li>
+                            <li>Causes gradual load transfer from concrete to reinforcement</li>
+                            <li>Reduces internal stresses from restrained shrinkage, potentially decreasing cracking</li>
+                            <li>In tall buildings, differential creep between columns can lead to partition movement and cracking</li>
+                        </ol>
 
-                <h3>तेर्सो ब्यान्डहरू</h3>
-                <p>तेर्सो ब्यान्डहरूले सबै पर्खालहरूलाई बाँधेर भवनलाई एक एकाइको रूपमा समेट्छन्। उदाहरणका लागि: गेबल ब्यान्ड, छाना ब्यान्ड, लिन्टेल ब्यान्ड, र प्लिन्थ ब्यान्ड।</p>
+                        <h3>Comparative Rates</h3>
+                        <p>While 80-85% of shrinkage occurs within six months, creep develops more slowly with only 75% occurring in the first year.</p>
 
-                <h3>खुल्ला ठाउँहरू</h3>
-                <p>पर्खालको कुनामा नजिक खुल्ला ठाउँ हुनुले बल हस्तान्तरणमा बाधा पुर्याउँछ र धेरै ठूला खुल्ला ठाउँले पर्खाल कमजोर हुन्छ। त्यसैले खुल्ला ठाउँहरू साना र कुनाबाट टाढा राख्नुपर्छ।</p>
+                        <h3>Design Considerations</h3>
+                        <p>Engineers must account for creep effects in long-term deflection calculations, prestress loss estimation, and when considering differential movements in structural systems.</p>
+                    `,
+                    fullPage: "blog-concrete-creep.html"
+                },
+                {
+                    id: 3,
+                    title: "Sustainable Construction Materials",
+                    category: "Sustainability",
+                    date: "June 14, 2025",
+                    readTime: "5 min read",
+                    image: "assets\blogs\sustainablematerias.png",
+                    excerpt: "Exploring eco-friendly alternatives to traditional construction materials that reduce environmental impact...",
+                    content: `
+                        <h2>Eco-Friendly Building Materials</h2>
+                        <p>The construction industry is increasingly adopting sustainable materials to reduce its environmental footprint. These materials offer comparable or superior performance to traditional options while being more environmentally friendly.</p>
 
-                <h3>ठाडो सुदृढीकरण</h3>
-                <p>ठाडो सुदृढीकरणले पर्खाललाई चिप्लिन र कमजोर दिशामा ढल्नबाट रोक्छ।</p>
+                        <h3>Bamboo</h3>
+                        <p>Bamboo is one of the most sustainable building materials available. It grows rapidly, requires minimal pesticides, and has a high strength-to-weight ratio. Modern treatments have improved its durability against insects and moisture.</p>
 
-                <h3>थ्रु स्टोनको व्यवस्था</h3>
-                <p>ढुङ्गा संरचनामा थ्रु स्टोनको व्यवस्था अनिवार्य छ जसले स्थिरता र मजबुती दिन्छ।</p>
+                        <h3>Recycled Steel</h3>
+                        <p>Using recycled steel reduces the need for mining virgin ore. Steel is 100% recyclable without loss of quality, and recycled steel requires about 75% less energy to produce than new steel.</p>
 
-                <h3>भवनको योजना</h3>
-                <p>असममित योजना भएका भवनहरू भूकम्प प्रतिरोधी हुने भएकाले प्राथमिकता दिइन्छ।</p>
-                <p>L, T, E, Y आकारका भवनलाई आयताकार भागहरूमा विभाजन गर्नुपर्छ।</p>
+                        <h3>Rammed Earth</h3>
+                        <p>This ancient technique is gaining modern popularity. Rammed earth walls provide excellent thermal mass, regulating indoor temperatures naturally. When sourced locally, it has minimal transportation emissions.</p>
 
-                <h3>लचकदार डिजाइन</h3>
-                <p>संरचनालाई लचकदार (ductile) विफलता सुनिश्चित गर्न डिजाइन गर्नुपर्छ जसले भूकम्पको समयमा सुरक्षित हुन्छ।</p>
-            `
-        }
-    ]
-};
+                        <h3>Cross-Laminated Timber (CLT)</h3>
+                        <p>CLT is an engineered wood product that's strong enough for mid-rise construction. It sequesters carbon and has a much lower embodied energy than steel or concrete equivalents.</p>
 
-// Rest of your JavaScript code remains exactly the same...
+                        <h3>Hempcrete</h3>
+                        <p>Made from hemp fibers mixed with lime, hempcrete is lightweight, insulating, and carbon-negative. It's breathable, regulating humidity naturally while providing good thermal performance.</p>
+
+                        <h3>Benefits of Sustainable Materials</h3>
+                        <ul>
+                            <li>Lower embodied energy</li>
+                            <li>Reduced carbon footprint</li>
+                            <li>Improved indoor air quality</li>
+                            <li>Often recyclable or biodegradable</li>
+                            <li>Frequently sourced locally, supporting local economies</li>
+                        </ul>
+
+                        <p>As technology advances, these materials are becoming more cost-competitive while offering long-term savings through energy efficiency and durability.</p>
+                    `,
+                    fullPage: "blog-sustainable-materials.html"
+                },
+                {
+                    id: 4,
+                    title: "BIM in Modern Construction",
+                    category: "Technology",
+                    date: "June 14, 2025",
+                    readTime: "6 min read",
+                    image: "assets\blogs\BIM.png",
+                    excerpt: "How Building Information Modeling is revolutionizing the construction industry through digital collaboration...",
+                    content: `
+                        <h2>The BIM Revolution</h2>
+                        <p>Building Information Modeling (BIM) has transformed how construction projects are designed, coordinated, and managed. This intelligent 3D model-based process provides architecture, engineering, and construction professionals with insights to efficiently plan, design, construct, and manage buildings.</p>
+
+                        <h3>Key Benefits of BIM</h3>
+                        <ul>
+                            <li><strong>Improved Visualization:</strong> 3D models help stakeholders understand the design intent clearly before construction begins.</li>
+                            <li><strong>Enhanced Coordination:</strong> Clash detection identifies conflicts between systems early in the design phase.</li>
+                            <li><strong>Cost Estimation:</strong> BIM software can automatically generate accurate quantity takeoffs and cost estimates.</li>
+                            <li><strong>Schedule Optimization:</strong> 4D BIM adds time as a dimension, enabling better construction sequencing.</li>
+                            <li><strong>Facility Management:</strong> The model serves as a database for building information throughout its lifecycle.</li>
+                        </ul>
+
+                        <h3>BIM Implementation Levels</h3>
+                        <p>BIM adoption occurs in stages:</p>
+                        <ol>
+                            <li><strong>Level 0:</strong> 2D CAD drafting with no collaboration</li>
+                            <li><strong>Level 1:</strong> A mix of 2D and 3D with some file sharing</li>
+                            <li><strong>Level 2:</strong> Collaborative working with all parties using 3D BIM models</li>
+                            <li><strong>Level 3:</strong> Full integration with all disciplines working on a shared model</li>
+                        </ol>
+
+                        <h3>Future of BIM</h3>
+                        <p>Emerging trends include:</p>
+                        <ul>
+                            <li>Integration with IoT for smart buildings</li>
+                            <li>Augmented reality for on-site visualization</li>
+                            <li>AI-powered design optimization</li>
+                            <li>Cloud-based collaboration platforms</li>
+                            <li>Digital twins for facility management</li>
+                        </ul>
+
+                        <p>As BIM becomes more sophisticated, it's evolving from a design tool to a comprehensive platform for managing the entire building lifecycle, from conception through demolition.</p>
+                    `,
+                    fullPage: "blog-bim-construction.html"
+                }
+            ],
+            np: [
+                {
+                    id: 1,
+                    title: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइन",
+                    category: "संरचनात्मक",
+                    date: "बैशाख २९, २०८२",
+                    readTime: "३ मिनेट पढ्ने",
+                    image: "assets/blogs/seismicmasonry.png",
+                    excerpt: "मासोनरी संरचनाहरूको भूकम्प प्रतिरोधी डिजाइनका लागि प्रयोग गरिने नवीन सामग्री र प्रविधिहरू अन्वेषण गर्दै...",
+                    content: `
+                        <h2>इँटा-पत्थरका भवन र भूकम्पीय प्रदर्शन</h2>
+                        <p>इँटा र ढुङ्गाबाट बनेका भवनहरू नाजुक संरचना भएकाले भूकम्पीय क्षतिको जोखिम बढी हुन्छ।</p>
+
+                        <p>भूकम्पीय प्रदर्शन सुधार गर्न सबै पर्खालहरू ठीकसँग जोडिएको र छाना तथा फाउन्डेसनसँग मजबुत एंकर गरिएको हुनुपर्छ जसले सम्पूर्ण संरचनालाई बाकस जस्तो काम गर्न मद्दत गर्छ, जसलाई <strong>बक्स एक्शन (box action)</strong> भनिन्छ।</p>
+
+                        <h3>बक्स एक्शनका लागि:</h3>
+                        <ul>
+                            <li>पर्खालहरूबीचको जडान राम्रो हुनुपर्छ।</li>
+                            <li>ढोका र झ्यालजस्ता खुल्ला ठाउँहरू सकेसम्म साना राख्नुपर्छ।</li>
+                            <li>लम्बाइ/मोटाइ र उचाइ/मोटाइ अनुपात कोड अनुसार सीमाभित्र हुनुपर्छ।</li>
+                        </ul>
+
+                        <h3>तेर्सो ब्यान्डहरू</h3>
+                        <p>तेर्सो ब्यान्डहरूले सबै पर्खालहरूलाई बाँधेर भवनलाई एक एकाइको रूपमा समेट्छन्। उदाहरणका लागि: गेबल ब्यान्ड, छाना ब्यान्ड, लिन्टेल ब्यान्ड, र प्लिन्थ ब्यान्ड।</p>
+
+                        <h3>खुल्ला ठाउँहरू</h3>
+                        <p>पर्खालको कुनामा नजिक खुल्ला ठाउँ हुनुले बल हस्तान्तरणमा बाधा पुर्याउँछ र धेरै ठूला खुल्ला ठाउँले पर्खाल कमजोर हुन्छ। त्यसैले खुल्ला ठाउँहरू साना र कुनाबाट टाढा राख्नुपर्छ।</p>
+
+                        <h3>ठाडो सुदृढीकरण</h3>
+                        <p>ठाडो सुदृढीकरणले पर्खाललाई चिप्लिन र कमजोर दिशामा ढल्नबाट रोक्छ।</p>
+
+                        <h3>थ्रु स्टोनको व्यवस्था</h3>
+                        <p>ढुङ्गा संरचनामा थ्रु स्टोनको व्यवस्था अनिवार्य छ जसले स्थिरता र मजबुती दिन्छ।</p>
+
+                        <h3>भवनको योजना</h3>
+                        <p>सममित योजना भएका भवनहरू भूकम्प प्रतिरोधी हुने भएकाले प्राथमिकता दिइन्छ।</p>
+                        <p>L, T, E, Y आकारका भवनलाई आयताकार भागहरूमा विभाजन गर्नुपर्छ।</p>
+
+                        <h3>लचकदार डिजाइन</h3>
+                        <p>संरचनालाई लचकदार (ductile) विफलता सुनिश्चित गर्न डिजाइन गर्नुपर्छ जसले भूकम्पको समयमा सुरक्षित हुन्छ।</p>
+                    `,
+                    fullPage: "blog-seismic-design-np.html"
+                },
+                {
+                    id: 2,
+                    title: "कंक्रीटमा क्रिप: समय-निर्भर विकृति",
+                    category: "संरचनात्मक",
+                    date: "जेठ ३१, २०८२",
+                    readTime: "४ मिनेट पढ्ने",
+                    image: "assets/blogs/creep_concrete.png",
+                    excerpt: "कंक्रीटमा दिर्घकालीन लोड अन्तर्गत हुने समय-निर्भर अप्रत्यास्थ विकृति र यसले संरचनात्मक व्यवहारमा पार्ने प्रभावहरू बुझ्दै...",
+                    content: `
+                        <h2>कंक्रीटमा क्रिप</h2>
+                        <p>क्रिप भनेको दिर्घकालीन तनाव अन्तर्गत कंक्रीटमा हुने समय-निर्भर अप्रत्यास्थ विकृति हो। सरलताका लागि यसलाई स्रिंकेज (संकोचन) सँग मिलाएर विचार गरिन्छ।</p>
+
+                        <h3>क्रिपका मुख्य विशेषताहरू</h3>
+                        <ul>
+                            <li><strong>तत्काल पुनर्प्राप्ति:</strong> लोड हटाइँदा उमेर अनुसारको प्रत्यास्थ विकृति बराबर तत्काल विकृति घट्छ।</li>
+                            <li><strong>क्रिप रिकभरी:</strong> तत्काल पुनर्प्राप्तिपछि विकृति बिस्तारै घट्दै जान्छ - यो सधैं मूल क्रिप विकृति भन्दा सानो हुन्छ।</li>
+                            <li><strong>रिलेक्सेशन:</strong> निश्चित विकृति अन्तर्गत क्रिपले समयसँगै तनाव घटाउँदै जान्छ।</li>
+                            <li><strong>अपरिवर्तनीयता:</strong> क्रिप पूर्ण रूपमा उल्टिन्ने भएकाले स्थायी विकृति बाँकी रहन्छ।</li>
+                        </ul>
+
+                        <h3>समय निर्भरता</h3>
+                        <p>क्रिपको दर समयसँगै घट्दै जान्छ, र पाँच वर्षपछि स्थायी हुन्छ। पहिलो १२ महिनामा मात्र ७५% क्रिप हुन्छ।</p>
+
+                        <h3>क्रिपको व्यावहारिक प्रभाव</h3>
+                        <ol>
+                            <li>प्रबलित कंक्रीट बीमको डिफ्लेक्सन समयसँगै बढाउँछ</li>
+                            <li>कंक्रीटबाट सुदृढीकरणमा लोड स्थानान्तरण गराउँछ</li>
+                            <li>आन्तरिक तनाव घटाएर क्र्याकिंग कम गर्न सक्छ</li>
+                            <li>अग्ला भवनहरूमा स्तम्भहरूबीच भिन्न क्रिपले पार्टिसनमा चलन र क्र्याकिंग गराउँछ</li>
+                        </ol>
+
+                        <h3>तुलनात्मक दर</h3>
+                        <p>स्रिंकेजको ८०-८५% छ महिनाभित्रै हुँदा क्रिप बिस्तारै विकसित हुन्छ।</p>
+
+                        <h3>डिजाइन विचार</h3>
+                        <p>इन्जिनियरहरूले दिर्घकालीन डिफ्लेक्सन गणना, प्रीस्ट्रेस ह्रास अनुमान, र संरचनात्मक प्रणालीमा भिन्न चलन विचार गर्दा क्रिप प्रभावलाई ध्यानमा राख्नुपर्छ।</p>
+                    `,
+                    fullPage: "blog-concrete-creep-np.html"
+                },
+                {
+                    id: 3,
+                    title: "टिकाऊ निर्माण सामग्रीहरू",
+                    category: "टिकाऊपन",
+                    date: "जेठ ३१, २०८२",
+                    readTime: "५ मिनेट पढ्ने",
+                    image: "assets\blogs\sustainablematerias.png",
+                    excerpt: "परम्परागत निर्माण सामग्रीको विकल्पहरू अन्वेषण गर्दै जसले वातावरणीय प्रभाव घटाउँछ...",
+                    content: `
+                        <h2>पर्यावरणमैत्री निर्माण सामग्रीहरू</h2>
+                        <p>निर्माण उद्योगले वातावरणीय प्रभाव घटाउन टिकाऊ सामग्रीहरू अपनाउँदैछ। यी सामग्रीहरूले परम्परागत विकल्पहरूभन्दा बराबर वा उत्कृष्ट प्रदर्शन गर्छन्।</h2>
+
+                        <h3>बाँस</h3>
+                        <p>बाँस सबैभन्दा टिकाऊ निर्माण सामग्री हो। यो छिटो बढ्छ, कम कीटनाशक चाहिन्छ र उच्च शक्ति-भार अनुपात छ। आधुनिक उपचारहरूले यसलाई कीट र नमी विरुद्ध बढी टिकाऊ बनाएको छ।</p>
+
+                        <h3>रिसाइकल गरिएको स्टिल</h3>
+                        <p>रिसाइकल गरिएको स्टिलले नयाँ खनिज खन्न आवश्यकता घटाउँछ। स्टिल १००% रिसाइकल हुने भएकाले यसको गुणस्तर घट्दैन, र नयाँ स्टिल भन्दा ७५% कम उर्जा खपत गर्छ।</p>
+
+                        <h3>राम्ड अर्थ</h3>
+                        <p>यो प्राचीन प्रविधि आधुनिक समयमा लोकप्रिय हुँदैछ। राम्ड अर्थ भित्ताहरूले उत्कृष्ट तापीय जडत्व प्रदान गर्छन्। स्थानीय स्रोतबाट लिइएमा यसको यातायात उत्सर्जन न्यून हुन्छ।</p>
+
+                        <h3>क्रस-ल्यामिनेटेड टिम्बर (CLT)</h3>
+                        <p>CLT इन्जिनियर गरिएको काठ हो जुन मध्य-उचाइ भवन निर्माणका लागि पर्याप्त बलियो छ। यसले कार्बन सेक्वेस्टर गर्छ र स्टिल वा कंक्रीट भन्दा धेरै कम उर्जा खपत गर्छ।</p>
+
+                        <h3>हेम्पक्रिट</h3>
+                        <p>हेम्प फाइबर र चुन मिसिएर बनेको हेम्पक्रिट हल्का, इन्सुलेटिङ र कार्बन-निगेटिभ छ। यसले प्राकृतिक रूपमा आर्द्रता नियन्त्रण गर्छ र उत्कृष्ट तापीय प्रदर्शन दिन्छ।</p>
+
+                        <h3>टिकाऊ सामग्रीका फाइदाहरू</h3>
+                        <ul>
+                            <li>कम उर्जा खपत</li>
+                            <li>कार्बन फुटप्रिन्ट घटाउँछ</li>
+                            <li>भित्ता वायु गुणस्तर सुधार्छ</li>
+                            <li>धेरैजसो रिसाइकल वा बायोडिग्रेडेबल हुन्छन्</li>
+                            <li>प्रायः स्थानीय स्रोतबाट उपलब्ध, स्थानीय अर्थतन्त्रलाई समर्थन गर्छ</li>
+                        </ul>
+
+                        <p>प्रविधि अगाडि बढ्दै जाँदा यी सामग्रीहरू सस्तो हुँदै गइरहेका छन् र उर्जा दक्षता र टिकाउपन मार्फत दिर्घकालीन बचत गर्छन्।</p>
+                    `,
+                    fullPage: "blog-sustainable-materials-np.html"
+                },
+                {
+                    id: 4,
+                    title: "आधुनिक निर्माणमा BIM",
+                    category: "प्रविधि",
+                    date: "जेठ ३१, २०८२",
+                    readTime: "६ मिनेट पढ्ने",
+                    image: "assets\blogs\BIM.png",
+                    excerpt: "बिल्डिङ इन्फर्मेशन मोडेलिङले डिजिटल सहकार्य मार्फत निर्माण उद्योगमा क्रान्ति ल्याइरहेको छ...",
+                    content: `
+                        <h2>BIM क्रान्ति</h2>
+                        <p>बिल्डिङ इन्फर्मेशन मोडेलिङ (BIM) ले निर्माण परियोजनाहरू डिजाइन, समन्वय र व्यवस्थापन गर्ने तरिका परिवर्तन गरेको छ। यो बुद्धिमान ३D मोडेल-आधारित प्रक्रियाले वास्तुकार, इन्जिनियर र निर्माण पेशेवरहरूलाई भवनहरू योजना, डिजाइन, निर्माण र व्यवस्थापन गर्न क्षमता प्रदान गर्छ।</p>
+
+                        <h3>BIM का मुख्य फाइदाहरू</h3>
+                        <ul>
+                            <li><strong>दृष्टिगत सुधार:</strong> ३D मोडेलले निर्माण सुरु हुनु अगाडि नै डिजाइन उद्देश्य स्पष्ट बनाउँछ।</li>
+                            <li><strong>समन्वय सुधार:</strong> क्ल्यास डिटेक्शनले डिजाइन चरणमा नै प्रणालीहरूबीच द्वन्द्व पत्ता लगाउँछ।</li>
+                            <li><strong>लागत अनुमान:</strong> BIM सफ्टवेयरले स्वचालित रूपमा सही मात्रा र लागत अनुमान उत्पन्न गर्छ।</li>
+                            <li><strong>समयतालिका अनुकूलन:</strong> 4D BIM ले समय जोड्छ, राम्रो निर्माण अनुक्रमणिका सक्षम गर्छ।</li>
+                            <li><strong>सुविधा व्यवस्थापन:</strong> मोडेलले भवनको सम्पूर्ण जीवनचक्रको लागि जानकारीको डाटाबेसको रूपमा काम गर्छ।</li>
+                        </ul>
+
+                        <h3>BIM कार्यान्वयन स्तरहरू</h3>
+                        <p>BIM अपनाउने चरणहरू:</p>
+                        <ol>
+                            <li><strong>स्तर ०:</strong> 2D CAD ड्राफ्टिङ, कुनै सहकार्य छैन</li>
+                            <li><strong>स्तर १:</strong> 2D र 3D को मिश्रण, केही फाइल साझेदारी</li>
+                            <li><strong>स्तर २:</strong> सहकार्यात्मक कार्य, सबै पक्षहरूले 3D BIM मोडेल प्रयोग गर्छन्</li>
+                            <li><strong>स्तर ३:</strong> पूर्ण एकीकरण, सबै विषयहरू साझा मोडेलमा काम गर्छन्</li>
+                        </ol>
+
+                        <h3>BIM को भविष्य</h3>
+                        <p>उदयवान प्रवृत्तिहरू:</p>
+                        <ul>
+                            <li>स्मार्ट भवनहरूका लागि IoT संग एकीकरण</li>
+                            <li>साइट दृष्टिगतिका लागि आगमनात्मक वास्तविकता</li>
+                            <li>AI-शक्ति प्राप्त डिजाइन अनुकूलन</li>
+                            <li>क्लाउड-आधारित सहकार्य प्लेटफर्म</li>
+                            <li>सुविधा व्यवस्थापनका लागि डिजिटल ट्विनहरू</li>
+                        </ul>
+
+                        <p>BIM अझ जटिल हुँदै जाँदा, यो डिजाइन उपकरणबाट भवनको सम्पूर्ण जीवनचक्र व्यवस्थापन गर्ने व्यापक प्लेटफर्ममा विकसित हुँदैछ।</p>
+                    `,
+                    fullPage: "blog-bim-construction-np.html"
+                }
+            ]
+        };
 
         // DOM Elements
         const blogsContainer = document.getElementById('blogsContainer');
@@ -593,8 +867,8 @@
                         </div>
                         <h3>${blog.title}</h3>
                         <p>${blog.excerpt}</p>
-                        <a href="#" class="btn btn-primary read-more-btn" data-id="${blog.id}">
-                            Read More <i class="fas fa-arrow-right"></i>
+                        <a href="${blog.fullPage}" target="_blank" class="btn btn-primary read-more-btn" data-id="${blog.id}">
+                            ${lang === 'en' ? 'Read More' : 'पढ्नुहोस्'} <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 `;
@@ -605,6 +879,12 @@
             // Add event listeners to read more buttons
             document.querySelectorAll('.read-more-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
+                    // The link will open in new tab due to target="_blank"
+                    // We'll also add a fallback for the modal if needed
+                    if(e.ctrlKey || e.metaKey) {
+                        // Allow opening in new tab with ctrl/cmd click
+                        return;
+                    }
                     e.preventDefault();
                     const blogId = parseInt(btn.dataset.id);
                     openBlogModal(blogId, lang);
@@ -687,34 +967,35 @@
                 }
             });
         });
+        
         // Regular anchor link scrolling within current page
-document.querySelectorAll('a[href^="#"]:not([href^="index.html#"])').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        if(this.getAttribute('href') === '#') {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        document.querySelectorAll('a[href^="#"]:not([href^="index.html#"])').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(navLinks && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
             });
-            return;
-        }
-        
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-            window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
-            });
-            
-            // Close mobile menu if open
-            if(navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        }
-    });
-});
+        });
     </script>
 </body>
 </html>

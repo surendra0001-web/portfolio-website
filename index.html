@@ -724,36 +724,7 @@
     }
 }
         
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 20px rgba(67, 97, 238, 0.4);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
         
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-5px);
-        }
         
         /* Responsive Design */
         @media (max-width: 992px) {
@@ -802,60 +773,31 @@
                 left: 0;
             }
             
-          @media (max-width: 768px) {
-    /* Mobile dropdown styles */
-    .dropdown {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .dropdown > a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .dropdown-content {
-        position: static;
-        display: none;
-        width: 100%;
-        box-shadow: none;
-        opacity: 1;
-        transform: none;
-        margin: 0.5rem 0;
-        background-color: rgba(67, 97, 238, 0.05);
-        border-radius: var(--border-radius);
-    }
-    /* For mobile */
+       /* For mobile */
 @media (max-width: 768px) {
     .dropdown-content {
         display: none;
-    }
-    
-    .dropdown.active .dropdown-content {
-        display: block;
-    }
-    
-    .dropdown-content a.active {
-        background-color: #f0f0f0; /* Visual feedback for active item */
-    }
-}
-    
-    .dropdown.active .dropdown-content {
-        display: block;
+        position: absolute;
+        width: 100%;
+        box-shadow: none;
+        pointer-events: auto; /* Ensures links are always clickable */
         animation: fadeIn 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
     }
     
     .dropdown-content a {
         padding: 0.8rem 1rem;
         text-align: center;
         color: var(--text);
-        pointer-events: none; /* Disable clicking initially */
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     
-    .dropdown-content a.active {
-        pointer-events: auto; /* Enable clicking when active */
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
         background-color: rgba(67, 97, 238, 0.1);
     }
     
@@ -863,6 +805,7 @@
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
     }
+}
 
 }
             .hero h1 {
@@ -914,7 +857,7 @@
             .section {
                 padding: 3rem 0;
             }
-        }
+        
         @media (max-width: 768px) {
     .timeline-img-container img {
         height: 160px;
@@ -1002,9 +945,9 @@
     <li class="dropdown">
     <a href="#" onclick="event.preventDefault();" class="dropdown-toggle">Notes <i class="fas fa-chevron-down"></i></a>
     <div class="dropdown-content">
-        <a href="notes.html" data-target="notes">Handwritten Notes</a>
-        <a href="past-questions.html" data-target="past-questions">Past Questions</a>
-        <a href="lab-reports.html" data-target="lab-reports">Lab Reports</a>
+        <a href="notes.html" >Handwritten Notes</a>
+        <a href="past-questions.html" >Past Questions</a>
+        <a href="lab-reports.html">Lab Reports</a>
     </div>
 </li>
     <li><a href="blogs.html">Blogs</a></li>
@@ -1045,15 +988,15 @@
             <div class="about-content">
             <div class="about-text">
                 <h3>Who am I?</h3>
-                <p>Civil engineer-in-training at IOE Pulchowk with a passion for turning blueprints into reality. Love exploring innovative construction tech, sustainable design, and hands-on problem solving. When I'm not calculating load capacities, you'll find me learning new skills or geeking out over smart infrastructure.</p>
-                <p>Let's build the future—literally.</p>
-                <p>Civil engineer | Future shaper | Curiosity-driven builder</p>
+                <p>Civil engineer-in-training at IOE Pulchowk with a passion for turning blueprints into reality. Love exploring innovative construction tech, sustainable design, and hands-on problem solving.</p>
+                <p>Let's build the future.</p>
+                <p>Civil engineering Student | Future shaper | Curiosity-driven builder</p>
                     
                     <h3 style="margin-top: 2rem;">Technical Skills</h3>
                     <div class="skills-list">
                         <span class="skill"><i class="fas fa-code"></i> C Programming</span>
                         <span class="skill"><i class="fas fa-drafting-compass"></i> AutoCAD</span>
-                        <span class="skill"><i class="fas fa-map-marked-alt"></i> ArcGIS</span>
+                         <!--  <span class="skill"><i class="fas fa-map-marked-alt"></i> ArcGIS</span>-->
                         <span class="skill"><i class="fab fa-python"></i> Python</span>
                         <span class="skill"><i class="fas fa-file-excel"></i> MS Office</span>
                         <span class="skill"><i class="fas fa-ruler-combined"></i> SWDTM</span>
@@ -1086,7 +1029,7 @@
         </div>
         <h3>Bachelor's in Civil Engineering</h3>
         <h4>IOE Pulchowk Campus | 2022 - 2026</h4>
-        <p>A high-achieving student with a passion for structural engineering. Beyond academics, I actively participated in training programs, workshops, and engineering competitions while mastering industry tools like AutoCAD, ArcGIS, and ETABS. My hands-on projects and site visits strengthened my ability to bridge theory with real-world construction challenges.</p>
+        <p>A passionate student for civil engineering. Beyond academics, I actively participated in training programs, workshops, and engineering competitions while learning industry tools like AutoCAD, ArcGIS, and ETABS.</p>
                 </div>
                 </div>
 
@@ -1121,7 +1064,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
-                <p>Feel free to reach out for collaborations or just to say hello</p>
+                <p>Feel free to reach out for collaborations or any suggestions.</p>
             </div>
             
             <div class="contact-container">
@@ -1162,7 +1105,7 @@
                     
                     <h3 style="margin-top: 3rem;">Follow Me</h3>
                     <div class="social-links">
-    <a href="https://github.com/surendra0001-web" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+       <!-- <a href="https://github.com/surendra0001-web" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>-->
     <a href="https://www.linkedin.com/in/surendra-sharma-6a1a8823b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     <a href="https://x.com/SushanSharma4" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
     <a href="https://www.instagram.com/_surendra_sharma_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1210,7 +1153,7 @@
                         <img src="assets\LOGO (1).jpg" alt="Surendra Sharma Logo" loading="lazy">
                         <span>SURENDRA</span>
                     </div>
-                    <p>Innovative civil engineer dedicated to creating sustainable infrastructure solutions through cutting-edge design and technology.</p>
+                    <p>Innovative civil engineering student dedicated to creating sustainable infrastructure solutions through cutting-edge design and technology.</p>
                 </div>
                 
                 <div class="footer-col">
@@ -1484,8 +1427,7 @@
                         
                         if(!isActive) {
                             // First click - just activate the link
-                            e.preventDefault();
-                            e.stopPropagation();
+
                             
                             // Deactivate all other links in this dropdown
                             dropdown.querySelectorAll('.dropdown-content a').forEach(link => {

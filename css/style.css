@@ -220,32 +220,39 @@
             display: none;
         }
         
-           /* Mobile dropdown styles */
-            .dropdown {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .dropdown-content {
-                position: static;
-                display: none;
-                width: 100%;
-                box-shadow: none;
-                opacity: 1;
-                transform: none;
-                margin-top: 1rem;
-                background-color: rgba(67, 97, 238, 0.05);
-                border-radius: var(--border-radius);
-            }
-            
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-            
-            .dropdown-content a {
-                padding: 0.8rem 1rem;
-                text-align: center;
-            }
+           /* For mobile */
+@media (max-width: 768px) {
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        width: 100%;
+        box-shadow: none;
+        pointer-events: auto; /* Ensures links are always clickable */
+        animation: fadeIn 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        padding: 0.8rem 1rem;
+        text-align: center;
+        color: var(--text);
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
+        background-color: rgba(67, 97, 238, 0.1);
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+        }
             
         /* Hero Section */
         .hero {

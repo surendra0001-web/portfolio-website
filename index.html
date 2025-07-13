@@ -412,123 +412,143 @@
             transform: translateY(-3px);
         }
         
-        /* Education Section */
-        .education {
-            background-color: rgb(241, 230, 230);
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: var(--primary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            border-radius: 2px;
-        }
-        
-        .timeline-item {
-            padding: 1rem 3rem;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background: white;
-            border: 4px solid var(--primary);
-            border-radius: 50%;
-            top: 1.5rem;
-            z-index: 1;
-        }
-        
-        .left {
-            left: 0;
-        }
-        
-        .right {
-            left: 50%;
-        }
-        
-        .left::after {
-            right: -12px;
-        }
-        
-        .right::after {
-            left: -12px;
-        }
-        
-        .timeline-content {
-            padding: 2rem;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .timeline-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-        
-        .timeline-content h4 {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-        
-        .timeline-content p {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-        /* Add this to your existing CSS */
+   /* Education Section */
+.education {
+  background-color: rgb(241, 230, 230);
+  padding: 2rem 0;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* Vertical center line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: var(--primary);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Timeline item wrapper */
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+/* Left */
+.timeline-item.left {
+  flex-direction: row;
+}
+
+/* Right */
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+/* Dot on timeline */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 4px solid var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%,0);
+  z-index: 2;
+}
+
+/* Timeline content */
+.timeline-content {
+  background: white;
+  width: 45%;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  z-index: 1;
+  transition: var(--transition);
+}
+
+/* Timeline content hover effect */
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.timeline-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.timeline-content h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+/* Image styles */
 .timeline-img-container {
-    margin-bottom: 1.5rem;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 
 .timeline-img-container img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.timeline-img-container:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
 .timeline-img-container:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Adjust timeline item spacing */
-.timeline-content {
-    padding: 1.5rem; /* Reduced from 2rem to accommodate image */
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+
+  .timeline-content {
+    width: 100%;
+    margin-left: 30px;
+  }
+
+  .timeline-item::after {
+    left: 0;
+    transform: translateX(0);
+  }
 }
-        
+
         /* Contact Section */
         .contact {
             background-color: rgb(241, 230, 230);
@@ -1013,51 +1033,54 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="section education">
-        <div class="container">
-            <div class="section-title">
-                <h2>Education</h2>
-                <p>My academic journey and qualifications</p>
-            </div>
-            
-            <div class="timeline">
-               <!-- Education 1 - Modified with image -->
-<div class="timeline-item left">
-    <div class="timeline-content">
-        <div class="timeline-img-container">
-            <img src="assets\Pulchowkcampus.jpg" alt="IOE Pulchowk Campus" loading="lazy">
-        </div>
-        <h3>Bachelor's in Civil Engineering</h3>
-        <h4>IOE Pulchowk Campus | 2022 - 2026</h4>
-        <p>A passionate student for civil engineering. Beyond academics, I actively participated in training programs, workshops, and engineering competitions while learning industry tools like AutoCAD, ArcGIS, and ETABS.</p>
-                </div>
-                </div>
-
-<!-- Education 2 - Modified with image -->
-<div class="timeline-item right">
-    <div class="timeline-content">
-        <div class="timeline-img-container">
-            <img src="assets\Birendra.jpg" alt="Birendra Secondary School" loading="lazy">
-        </div>
-        <h3>10+2 (Science)</h3>
-        <h4>Birendra Secondary School | 2019 - 2021</h4>
-       <p>Completed with focus on science and mathematics, laying the foundation for my engineering career.</p>
-                        <p>GPA: 3.71/4.0</p>
+<section id="education" class="section education">
+  <div class="container">
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>My academic journey and qualifications</p>
     </div>
-</div>
-                
-                <!-- Education 3 -->
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Secondary Education</h3>
-                        <h4>Birendra Secondary School | 2018</h4>
-                        <p>Completed with focus on Optional Mathmatics and Accountancy</p>
-                        <p>GPA: 3.9/4.0</p>
-                    </div>
-                </div>
-            </div>
+
+    <div class="timeline">
+
+      <!-- LEFT: Bachelor's -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-img-container">
+            <img src="assets/Pulchowkcampus.jpg" alt="IOE Pulchowk Campus" loading="lazy">
+          </div>
+          <h3>Bachelor's in Civil Engineering</h3>
+          <h4>IOE Pulchowk Campus | 2022 - 2026</h4>
+          <p>A passionate student for civil engineering. Beyond academics, I actively participated in training programs, workshops, and engineering competitions while learning industry tools like AutoCAD, ArcGIS, and ETABS.</p>
         </div>
-    </section>
+      </div>
+
+      <!-- RIGHT: +2 -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-img-container">
+            <img src="assets/Birendra.jpg" alt="Birendra Secondary School" loading="lazy">
+          </div>
+          <h3>10+2 (Science)</h3>
+          <h4>Birendra Secondary School | 2019 - 2021</h4>
+          <p>Completed with focus on science and mathematics, laying the foundation for my engineering career.</p>
+          <p>GPA: 3.71/4.0</p>
+        </div>
+      </div>
+
+      <!-- LEFT: SEE -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>Secondary Education</h3>
+          <h4>Birendra Secondary School | 2018</h4>
+          <p>Completed with focus on Optional Mathematics and Accountancy</p>
+          <p>GPA: 3.9/4.0</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
